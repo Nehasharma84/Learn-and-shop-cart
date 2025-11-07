@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat - Learn & Shop Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="section">
+    <h2>Chat Assistant</h2>
+    <div class="card" style="max-width:720px;">
+      <div id="chatLog" class="chat-log" style="height:320px;"></div>
+      <form id="chatForm" class="chat-form" style="margin-top:8px;">
+        <input 
+          id="chatInput" 
+          type="text" 
+          placeholder="Ask me about courses or products..." 
+          autocomplete="off" 
+          required 
+        />
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.__LSApp) {
+        window.__LSApp.loadCurrentUser();
+      } else {
+        console.warn("⚠️ window.__LSApp not found — make sure it's defined in script.js");
+      }
+    });
+  </script>
+</body>
+</html>
