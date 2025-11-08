@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn & Shop Cart</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
+</head>
+
+<body>cm
+  <!-- Header -->
+  <header class="nav">
+    <div class="nav-left">
+      <a class="logo" href="index.html">Learn & Shop Cart</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile Nav Toggle -->
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-wrap">
+        <input id="globalSearch" placeholder="Search courses, products..." />
+      </div>
+      <button id="themeToggle" class="icon-btn" title="Toggle theme">
+        <i id="themeIcon" class="fa fa-moon"></i>
+      </button>
+      <a id="viewCart" href="cart.html" class="btn view-cart">View Cart</a>
+      <a id="cartBtn" href="cart.html" class="icon-btn" title="Cart">
+        <i class="fa fa-shopping-cart"></i><span id="cartCount" class="badge">0</span>
+      </a>
+      <a id="authBtn" href="login.html" class="icon-btn" title="User">
+        <i class="fa fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+      <button id="mobileNavClose" class="mobile-close" aria-label="Close menu">✕</button>
+      <div class="mobile-search">
+        <input id="mobileSearch" placeholder="Search courses, products..." />
+      </div>
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="mobile-actions">
+        <a href="cart.html" class="btn">View Cart</a>
+        <a href="login.html" class="btn">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Learn. Grow. Shop Smart.</h1>
+        <p>Courses, books, and tools to help you build real skills.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#courses">Start Learning</a>
+          <a class="btn" href="#shop">Go Shopping</a>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- Quick Cards -->
+    <section class="quick-cards">
+      <div class="card">
+        <h3>Courses</h3>
+        <p>Explore hands-on courses</p>
+      </div>
+      <div class="card">
+        <h3>Shop</h3>
+        <p>Books, gear and more</p>
+      </div>
+      <div class="card">
+        <h3>Chat Assistant</h3>
+        <p>Ask study & shopping questions</p>
+      </div>
+      <div class="card">
+        <h3>Account</h3>
+        <p>Manage subscriptions & orders</p>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+      <div class="section-head">
+        <h2>Courses</h2>
+        <div class="filters">
+          <select id="courseCategoryFilter">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+      </div>
+      <div id="coursesGrid" class="grid"></div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="section">
+      <div class="section-head"><h2>Shop</h2></div>
+      <div class="shop-controls card" style="display:flex; gap:8px; align-items:center; margin-bottom:12px;">
+        <div id="productFilters" class="filters"><!-- Buttons injected by script --></div>
+        <div style="margin-left:auto">
+          <button id="showAll" class="btn">Show All</button>
+        </div>
+      </div>
+      <div id="productsGrid" class="grid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <h2>About</h2>
+      <p>We help learners discover skills and the right materials to grow.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <div class="contact-card card">
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <label for="contactName">Name</label>
+              <input id="contactName" name="name" class="form-field" placeholder="Your full name" required />
+              <div class="field-error" data-for="contactName" aria-hidden="true"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" name="email" type="email" class="form-field" placeholder="you@example.com" required />
+              <div class="field-error" data-for="contactEmail" aria-hidden="true"></div>
+            </div>
+
+            <div class="form-row full">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" class="form-field" rows="6" placeholder="How can we help you?" required></textarea>
+              <div class="field-error" data-for="contactMessage" aria-hidden="true"></div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send Message</button>
+              <button class="btn" type="reset">Reset</button>
+            </div>
+          </form>
+
+          <aside class="contact-info">
+            <h3>Get in touch</h3>
+            <p>Prefer email? We reply within 1–2 business days. For urgent issues, include "URGENT" in the subject line.</p>
+            <ul class="contact-meta">
+              <li><strong>Email:</strong> support@learnshopcart.example</li>
+              <li><strong>Working hours:</strong> Mon–Fri, 9am–5pm</li>
+            </ul>
+            <div class="map-placeholder">Map (optional)</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>© 2025 Learn & Shop Cart</div>
+    <div class="links">
+      <a href="#">Privacy</a> · <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div id="chatWidget" class="chat-widget">
+    <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+    <div id="chatWindow" class="chat-window hidden">
+      <div class="chat-header">
+        Assistant
+        <button id="chatClose" aria-label="Close chat">✕</button>
+      </div>
+      <div id="chatLog" class="chat-log"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="Ask me about courses or products..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
+e" aria-atomic="true"></div>
+
+</body>
+</html>
