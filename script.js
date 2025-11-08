@@ -10,6 +10,38 @@ const state = { courses: [], products: [], currentUser: null };
 // --- Sample courses ---
 state.courses = [
   { id: 'c1', title: 'HTML & CSS', category: 'Web', rating: 4.7, price: 0, desc: 'Intro to web building', duration: '6 weeks' },
+  { id: 'c2', title: 'JavaScript Basics', category: 'Web', rating: 4.8, price: 1499, desc: 'Core JS for web', duration: '8 weeks' },
+  { id: 'c3', title: 'Python for Data', category: 'Data', rating: 4.9, price: 2499, desc: 'Intro to Python & data', duration: '10 weeks' },
+  { id: 'c4', title: 'Advanced JavaScript', category: 'Web', rating: 4.8, price: 3499, desc: 'Closures, prototypes, async patterns', duration: '8 weeks' },
+  { id: 'c5', title: 'React from Scratch', category: 'Web', rating: 4.9, price: 4499, desc: 'Build real UIs with React', duration: '10 weeks' },
+  { id: 'c6', title: 'Node.js & APIs', category: 'Web', rating: 4.6, price: 2499, desc: 'Backend fundamentals and REST', duration: '8 weeks' },
+  { id: 'c7', title: 'Data Structures & Algorithms', category: 'CS', rating: 4.9, price: 5499, desc: 'Essential DSA for interviews', duration: '12 weeks' },
+  { id: 'c8', title: 'Machine Learning Intro', category: 'Data', rating: 4.7, price: 7499, desc: 'Basic ML concepts and pipelines', duration: '10 weeks' },
+  { id: 'c9', title: 'DevOps Fundamentals', category: 'DevOps', rating: 4.5, price: 3499, desc: 'CI/CD, containers and infra', duration: '6 weeks' },
+  { id: 'c10', title: 'UX Design Basics', category: 'Design', rating: 4.4, price: 1999, desc: 'User-centered design process', duration: '6 weeks' },
+  { id: 'c11', title: 'SQL for Data', category: 'Data', rating: 4.6, price: 2499, desc: 'Querying and aggregations', duration: '6 weeks' },
+  { id: 'c12', title: 'TypeScript Practical', category: 'Web', rating: 4.8, price: 2999, desc: 'Types, generics and patterns', duration: '8 weeks' }
+];
+
+// --- 12 sample products ---
+state.products = [
+  { id: 'p1', title: 'Noise-Cancelling Headphones', category: 'Gadgets', price: 10999, desc: 'Premium ANC headphones with Bluetooth 5.0', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80' },
+  { id: 'p2', title: 'Ergonomic Laptop Stand', category: 'Accessories', price: 2999, desc: 'Adjustable aluminum laptop riser', img: 'https://images.unsplash.com/photo-1586776977607-310e9c725c37?w=600&q=80' },
+  { id: 'p3', title: 'RGB Mechanical Keyboard', category: 'Gadgets', price: 7499, desc: 'Blue switches with RGB backlight', img: 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=600&q=80' },
+  { id: 'p4', title: 'Smart Fitness Watch', category: 'Gadgets', price: 12499, desc: 'Health tracking & notifications', img: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&q=80' },
+  { id: 'p5', title: 'Wireless Earbuds', category: 'Gadgets', price: 4999, desc: 'True wireless with ANC', img: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80' },
+  { id: 'p6', title: 'Gaming Mouse', category: 'Gadgets', price: 3499, desc: '16000 DPI optical sensor', img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&q=80' },
+  { id: 'p7', title: 'USB-C Multiport Hub', category: 'Accessories', price: 2499, desc: '7-in-1 laptop adapter', img: 'https://images.unsplash.com/photo-1636389911644-96e4e5271fd9?w=600&q=80' },
+  { id: 'p8', title: 'Portable Power Bank', category: 'Gadgets', price: 1999, desc: '20000mAh fast charging', img: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80' },
+  { id: 'p9', title: 'Webcam HD 1080p', category: 'Gadgets', price: 3999, desc: 'Wide-angle with mic', img: 'https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=600&q=80' },
+  { id: 'p10', title: '1TB NVMe SSD', category: 'Gadgets', price: 8499, desc: 'Ultra-fast storage', img: 'https://images.unsplash.com/photo-1628557119555-563986e8740d?w=600&q=80' },
+  { id: 'p11', title: 'Blue Light Glasses', category: 'Accessories', price: 1299, desc: 'Digital eye protection', img: 'https://images.unsplash.com/photo-1633621641966-23836fcabd7a?w=600&q=80' },
+  { id: 'p12', title: 'Wireless Charger Pad', category: 'Gadgets', price: 1499, desc: '15W Qi charging', img: 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=600&q=80' }
+];
+
+// --- Sample courses ---
+state.courses = [
+  { id: 'c1', title: 'HTML & CSS', category: 'Web', rating: 4.7, price: 0, desc: 'Intro to web building', duration: '6 weeks' },
   { id: 'c2', title: 'JavaScript Basics', category: 'Web', rating: 4.8, price: 19, desc: 'Core JS for web', duration: '8 weeks' },
   { id: 'c3', title: 'Python for Data', category: 'Data', rating: 4.9, price: 29, desc: 'Intro to Python & data', duration: '10 weeks' },
   { id: 'c4', title: 'Advanced JavaScript', category: 'Web', rating: 4.8, price: 39, desc: 'Closures, prototypes, async patterns', duration: '8 weeks' },
@@ -50,99 +82,10 @@ const $all = (sel) => Array.from(document.querySelectorAll(sel));
 function saveUsers(users) { localStorage.setItem('users', JSON.stringify(users || [])); }
 function loadUsers() { return JSON.parse(localStorage.getItem('users') || '[]'); }
 
-function getCart() { 
-  return JSON.parse(localStorage.getItem('cart') || '[]'); 
-}
+function getCart() { return JSON.parse(localStorage.getItem('cart') || '[]'); }
+function saveCart(cart) { localStorage.setItem('cart', JSON.stringify(cart)); updateCartCount(); }
 
-function saveCart(cart) { 
-  localStorage.setItem('cart', JSON.stringify(cart)); 
-  updateCartCount(); 
-  updateCartUI(); 
-}
-
-function updateCartCount() { 
-  const cart = getCart();
-  const count = cart.reduce((sum, item) => sum + item.qty, 0); 
-  const el = $('#cartCount'); 
-  if (el) el.textContent = count;
-}
-
-function updateCartUI() {
-  const cart = getCart();
-  const cartContainer = $('#cartItems');
-  const cartTotal = $('#cartTotal');
-  
-  if (!cartContainer || !cartTotal) return;
-  
-  if (cart.length === 0) {
-    cartContainer.innerHTML = '<p class="text-center text-muted">Your cart is empty</p>';
-    cartTotal.textContent = '$0.00';
-    return;
-  }
-
-  let total = 0;
-  cartContainer.innerHTML = cart.map(item => {
-    const product = state.products.find(p => p.id === item.id) || 
-                   state.courses.find(c => c.id === item.id);
-    if (!product) return '';
-    
-    total += product.price * item.qty;
-    
-    return `
-      <div class="cart-item" data-id="${item.id}">
-        <div class="cart-item-info">
-          <h4>${product.title}</h4>
-          <p>$${product.price.toFixed(2)}</p>
-        </div>
-        <div class="cart-item-actions">
-          <button class="cart-qty-btn minus" data-id="${item.id}">-</button>
-          <span class="cart-qty">${item.qty}</span>
-          <button class="cart-qty-btn plus" data-id="${item.id}">+</button>
-          <button class="cart-remove-btn" data-id="${item.id}">×</button>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  cartTotal.textContent = '$' + total.toFixed(2);
-}
-
-function addToCart(id) {
-  const cart = getCart();
-  const existingItem = cart.find(item => item.id === id);
-  
-  if (existingItem) {
-    existingItem.qty++;
-  } else {
-    cart.push({ id, qty: 1 });
-  }
-  
-  saveCart(cart);
-  showToast('Item added to cart');
-}
-
-function removeFromCart(id) {
-  const cart = getCart();
-  const newCart = cart.filter(item => item.id !== id);
-  saveCart(newCart);
-  showToast('Item removed from cart');
-}
-
-function updateCartItemQty(id, delta) {
-  const cart = getCart();
-  const item = cart.find(item => item.id === id);
-  
-  if (!item) return;
-  
-  item.qty += delta;
-  
-  if (item.qty <= 0) {
-    removeFromCart(id);
-    return;
-  }
-  
-  saveCart(cart);
-}
+function updateCartCount() { const c = getCart().reduce((s, i) => s + i.qty, 0); const el = $('#cartCount'); if (el) el.textContent = c; }
 
 // --- Toasts ---
 function showToast(text, type = 'success', timeout = 2200) {
@@ -152,35 +95,13 @@ function showToast(text, type = 'success', timeout = 2200) {
   setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 250); }, timeout);
 }
 
-// --- Cart Event Handlers ---
-document.addEventListener('click', e => {
-  // Cart quantity buttons
-  if (e.target.matches('.cart-qty-btn')) {
-    const id = e.target.dataset.id;
-    const delta = e.target.classList.contains('plus') ? 1 : -1;
-    updateCartItemQty(id, delta);
-  }
-  
-  // Cart remove button
-  if (e.target.matches('.cart-remove-btn')) {
-    const id = e.target.dataset.id;
-    removeFromCart(id);
-  }
-
-  // Add to cart buttons
-  if (e.target.matches('.add-to-cart')) {
-    const id = e.target.dataset.id;
-    addToCart(id);
-  }
-});
-
 // --- Rendering ---
 function renderCourses(filter = '') {
   const grid = $('#coursesGrid'); grid.innerHTML = '';
   state.courses.forEach(c => {
     if (filter && !c.title.toLowerCase().includes(filter) && filter !== '') return;
     const div = document.createElement('div'); div.className = 'card course-card';
-    div.innerHTML = `<h3>${c.title}</h3><p>${c.desc}</p><div class="meta">${c.category} · ${c.duration} · ${c.price === 0 ? 'Free' : '₹' + c.price}</div><div class="card-actions"><button data-id="${c.id}" class="enroll">${c.price === 0 ? 'Enroll' : 'Enroll (₹' + c.price + ')'}</button><button data-id="${c.id}" class="details">Details</button></div>`;
+  div.innerHTML = `<h3>${c.title}</h3><p>${c.desc}</p><div class="meta">${c.category} · ${c.duration} · ${c.price === 0 ? 'Free' : '₹' + c.price}</div><div class="card-actions"><button data-id="${c.id}" class="enroll">${c.price === 0 ? 'Enroll' : 'Enroll (₹' + c.price + ')'}</button><button data-id="${c.id}" class="details">Details</button></div>`;
     grid.appendChild(div);
   });
 }
@@ -199,7 +120,7 @@ function renderProducts(search = '') {
     if (currentCategoryFilter !== 'all' && p.category !== currentCategoryFilter) return;
     if (search && !p.title.toLowerCase().includes(search)) return;
     const div = document.createElement('div'); div.className = 'card product-card';
-    div.innerHTML = `<img src="${p.img}" alt="${p.title}"/><h3>${p.title}</h3><p>${p.desc}</p><div class="meta">${p.category} · $${p.price}</div><div class="card-actions"><button data-id="${p.id}" class="add-to-cart">Add to Cart</button></div>`;
+    div.innerHTML = `<img src="${p.img}" alt="${p.title}"/><h3>${p.title}</h3><p>${p.desc}</p><div class="meta">${p.category} · ₹${p.price.toLocaleString('en-IN')}</div><div class="card-actions"><button data-id="${p.id}" class="add-to-cart">Add to Cart</button></div>`;
     grid.appendChild(div);
   });
 }
@@ -262,7 +183,7 @@ function handleBotCommand(raw) {
 
   // view cart
   if (/(show|view).*cart|what.*in my cart|cart please/i.test(input)) {
-    const cart = getCart(); if (cart.length === 0) return 'Your cart is empty.'; return 'Cart contains:\n' + cart.map(i => `• ${i.title || i.id} x${i.qty} — $${(i.price || 0) * i.qty}`).join('\n');
+    const cart = getCart(); if (cart.length === 0) return 'Your cart is empty.'; return 'Cart contains:\n' + cart.map(i => `• ${i.title || i.id} x${i.qty} — ₹${((i.price || 0) * i.qty).toLocaleString('en-IN')}`).join('\n');
   }
 
   // fallback small-talk and hints
@@ -298,14 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // mobile nav toggle
   const navToggle = document.getElementById('navToggle'); const mobileNav = document.getElementById('mobileNav'); const mobileClose = document.getElementById('mobileNavClose'); const mobileSearch = document.getElementById('mobileSearch');
-  function openMobileNav() { if (!mobileNav) return; mobileNav.setAttribute('aria-hidden', 'false'); navToggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { if (!mobileNav) return; mobileNav.setAttribute('aria-hidden', 'true'); navToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  if (navToggle) { navToggle.addEventListener('click', () => { const open = mobileNav && mobileNav.getAttribute('aria-hidden') === 'false'; if (open) closeMobileNav(); else openMobileNav(); }); }
-  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+  function openMobileNav(){ if(!mobileNav) return; mobileNav.setAttribute('aria-hidden','false'); navToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeMobileNav(){ if(!mobileNav) return; mobileNav.setAttribute('aria-hidden','true'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  if(navToggle){ navToggle.addEventListener('click', ()=>{ const open = mobileNav && mobileNav.getAttribute('aria-hidden')==='false'; if(open) closeMobileNav(); else openMobileNav(); }); }
+  if(mobileClose) mobileClose.addEventListener('click', closeMobileNav);
   // close when clicking overlay background
-  if (mobileNav) { mobileNav.addEventListener('click', (ev) => { if (ev.target === mobileNav) closeMobileNav(); }); }
+  if(mobileNav){ mobileNav.addEventListener('click', (ev)=>{ if(ev.target === mobileNav) closeMobileNav(); }); }
   // wire mobile search to global search behavior
-  if (mobileSearch) { mobileSearch.addEventListener('input', (e) => { const q = e.target.value.trim().toLowerCase(); currentSearchFilter = q; renderCourses(q); applyFiltersAndSearch(); closeMobileNav(); }); }
+  if(mobileSearch){ mobileSearch.addEventListener('input', (e)=>{ const q = e.target.value.trim().toLowerCase(); currentSearchFilter = q; renderCourses(q); applyFiltersAndSearch(); closeMobileNav(); }); }
 
   // contact form with client-side validation
   const contactForm = $('#contactForm');
@@ -321,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let valid = true; let firstInvalid = null;
       if (!nameEl.value.trim()) { getErrorEl('contactName').textContent = 'Please enter your name'; valid = false; firstInvalid = firstInvalid || nameEl; }
-      const emailVal = (emailEl.value || '').trim();
+      const emailVal = (emailEl.value||'').trim();
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
       if (!emailVal) { getErrorEl('contactEmail').textContent = 'Please enter your email'; valid = false; firstInvalid = firstInvalid || emailEl; }
       else if (!emailOk) { getErrorEl('contactEmail').textContent = 'Please enter a valid email address'; valid = false; firstInvalid = firstInvalid || emailEl; }
@@ -335,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // clear errors on reset
-    contactForm.addEventListener('reset', () => { getErrorEl('contactName').textContent = ''; getErrorEl('contactEmail').textContent = ''; getErrorEl('contactMessage').textContent = ''; });
+    contactForm.addEventListener('reset', ()=>{ getErrorEl('contactName').textContent=''; getErrorEl('contactEmail').textContent=''; getErrorEl('contactMessage').textContent=''; });
   }
 
   // chat widget

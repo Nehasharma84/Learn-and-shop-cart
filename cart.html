@@ -54,6 +54,21 @@ h2 {
   text-align: center;
 }
 
+/* Thumbnail inside table */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
 .cart-table th {
   background-color: #f0f7ff;
   color: #333;
@@ -153,7 +168,8 @@ h2 {
             <tr>
               <th>Item</th>
               <th>Qty</th>
-              <th>Price</th>
+              <th>Unit</th>
+              <th>Subtotal</th>
               <th></th>
             </tr>
           </thead>
@@ -162,16 +178,27 @@ h2 {
 
       let total = 0;
       cart.forEach((item, idx) => {
-        const price = item.price || 0;
-        const subtotal = price * item.qty;
+        const price = Number(item.price || 0);
+        const qty = Number(item.qty || 1);
+        const subtotal = price * qty;
         total += subtotal;
+        const img = item.image || 'https://via.placeholder.com/160?text=No+Img';
 
         html += `
           <tr>
-            <td>{item.title || item.id}</td>
-            <td>{item.qty}</td>
-            <td>{subtotal.toFixed(2)}</td>
-            <td><button data-idx="{idx}" class="remove">Remove</button></td>
+            <td style="text-align:left">
+              <div class="cart-item">
+                <img src="${img}" alt="${(item.title||item.id)}" />
+                <div>
+                  <div style="font-weight:600">${item.title || item.id}</div>
+                  <div style="font-size:13px;color:#666">${item.description || ''}</div>
+                </div>
+              </div>
+            </td>
+            <td>${qty}</td>
+            <td>₹${price.toFixed(2)}</td>
+            <td>₹${subtotal.toFixed(2)}</td>
+            <td><button data-idx="${idx}" class="remove">Remove</button></td>
           </tr>
         `;
       });
@@ -179,7 +206,7 @@ h2 {
       html += `
         </tbody>
         </table>
-        <div class="cart-total">Total: <strong>$${total.toFixed(2)}</strong></div>
+        <div class="cart-total">Total: <strong>₹${total.toFixed(2)}</strong></div>
       `;
 
       ctn.innerHTML = html;
