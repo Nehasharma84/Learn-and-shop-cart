@@ -7,37 +7,7 @@
 
 const state = { courses: [], products: [], currentUser: null };
 
-// --- Sample courses ---
-state.courses = [
-  { id: 'c1', title: 'HTML & CSS', category: 'Web', rating: 4.7, price: 0, desc: 'Intro to web building', duration: '6 weeks' },
-  { id: 'c2', title: 'JavaScript Basics', category: 'Web', rating: 4.8, price: 1499, desc: 'Core JS for web', duration: '8 weeks' },
-  { id: 'c3', title: 'Python for Data', category: 'Data', rating: 4.9, price: 2499, desc: 'Intro to Python & data', duration: '10 weeks' },
-  { id: 'c4', title: 'Advanced JavaScript', category: 'Web', rating: 4.8, price: 3499, desc: 'Closures, prototypes, async patterns', duration: '8 weeks' },
-  { id: 'c5', title: 'React from Scratch', category: 'Web', rating: 4.9, price: 4499, desc: 'Build real UIs with React', duration: '10 weeks' },
-  { id: 'c6', title: 'Node.js & APIs', category: 'Web', rating: 4.6, price: 2499, desc: 'Backend fundamentals and REST', duration: '8 weeks' },
-  { id: 'c7', title: 'Data Structures & Algorithms', category: 'CS', rating: 4.9, price: 5499, desc: 'Essential DSA for interviews', duration: '12 weeks' },
-  { id: 'c8', title: 'Machine Learning Intro', category: 'Data', rating: 4.7, price: 7499, desc: 'Basic ML concepts and pipelines', duration: '10 weeks' },
-  { id: 'c9', title: 'DevOps Fundamentals', category: 'DevOps', rating: 4.5, price: 3499, desc: 'CI/CD, containers and infra', duration: '6 weeks' },
-  { id: 'c10', title: 'UX Design Basics', category: 'Design', rating: 4.4, price: 1999, desc: 'User-centered design process', duration: '6 weeks' },
-  { id: 'c11', title: 'SQL for Data', category: 'Data', rating: 4.6, price: 2499, desc: 'Querying and aggregations', duration: '6 weeks' },
-  { id: 'c12', title: 'TypeScript Practical', category: 'Web', rating: 4.8, price: 2999, desc: 'Types, generics and patterns', duration: '8 weeks' }
-];
 
-// --- 12 sample products ---
-state.products = [
-  { id: 'p1', title: 'Noise-Cancelling Headphones', category: 'Gadgets', price: 10999, desc: 'Premium ANC headphones with Bluetooth 5.0', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80' },
-  { id: 'p2', title: 'Ergonomic Laptop Stand', category: 'Accessories', price: 2999, desc: 'Adjustable aluminum laptop riser', img: 'https://images.unsplash.com/photo-1586776977607-310e9c725c37?w=600&q=80' },
-  { id: 'p3', title: 'RGB Mechanical Keyboard', category: 'Gadgets', price: 7499, desc: 'Blue switches with RGB backlight', img: 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=600&q=80' },
-  { id: 'p4', title: 'Smart Fitness Watch', category: 'Gadgets', price: 12499, desc: 'Health tracking & notifications', img: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&q=80' },
-  { id: 'p5', title: 'Wireless Earbuds', category: 'Gadgets', price: 4999, desc: 'True wireless with ANC', img: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80' },
-  { id: 'p6', title: 'Gaming Mouse', category: 'Gadgets', price: 3499, desc: '16000 DPI optical sensor', img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&q=80' },
-  { id: 'p7', title: 'USB-C Multiport Hub', category: 'Accessories', price: 2499, desc: '7-in-1 laptop adapter', img: 'https://images.unsplash.com/photo-1636389911644-96e4e5271fd9?w=600&q=80' },
-  { id: 'p8', title: 'Portable Power Bank', category: 'Gadgets', price: 1999, desc: '20000mAh fast charging', img: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80' },
-  { id: 'p9', title: 'Webcam HD 1080p', category: 'Gadgets', price: 3999, desc: 'Wide-angle with mic', img: 'https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=600&q=80' },
-  { id: 'p10', title: '1TB NVMe SSD', category: 'Gadgets', price: 8499, desc: 'Ultra-fast storage', img: 'https://images.unsplash.com/photo-1628557119555-563986e8740d?w=600&q=80' },
-  { id: 'p11', title: 'Blue Light Glasses', category: 'Accessories', price: 1299, desc: 'Digital eye protection', img: 'https://images.unsplash.com/photo-1633621641966-23836fcabd7a?w=600&q=80' },
-  { id: 'p12', title: 'Wireless Charger Pad', category: 'Gadgets', price: 1499, desc: '15W Qi charging', img: 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=600&q=80' }
-];
 
 // --- Sample courses ---
 state.courses = [
